@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Problem-3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind (Offline) -->
+    <script src="../tailwind-browser.js"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-start min-h-screen py-10">
+    <div class="bg-white w-[400px] rounded-lg shadow-md overflow-hidden">
+        <div class="bg-indigo-500 text-white text-center py-16 font-semibold">
+            CADT - Cambodia Academy of<br>
+            Digital Technology
+        </div>
+        <div class="flex border-t border-b text-sm">
+            <button onclick="showTab('about')" id="tab-about"
+                class="flex-1 py-2 flex justify-center items-center gap-1">
+                🏫 About Us
+            </button>
+            <button onclick="showTab('programs')" id="tab-programs"
+                class="flex-1 py-2 flex justify-center items-center gap-1">
+                🎓 Programs
+            </button>
+            <button onclick="showTab('contact')" id="tab-contact"
+                class="flex-1 py-2 flex justify-center items-center gap-1">
+                ☎️ Contact
+            </button>
+        </div>
+        <div class="p-4 text-sm text-gray-700" id="content">
+            🇰🇭 Cambodia Academy of Digital Technology – A leading tech education institution in Cambodia. 
+            We develop skilled IT professionals through innovative programs in Computer Science, 
+            Software Engineering, and Digital Innovation.
+        </div>
+    </div>
+    <script>
+        function showTab(tab) {
+            const content = document.getElementById("content");
+            document.getElementById("tab-about").classList.remove("bg-blue-500", "text-white");
+            document.getElementById("tab-programs").classList.remove("bg-blue-500", "text-white");
+            document.getElementById("tab-contact").classList.remove("bg-blue-500", "text-white");
+
+            if (tab === "about") {
+                content.innerText =
+                    "KH Cambodia Academy of Digital Technology – A leading tech education institution in Cambodia. We develop skilled IT professionals through innovative programs in Computer Science, Software Engineering, and Digital Innovation.";
+                document.getElementById("tab-about").classList.add("bg-blue-500", "text-white");
+            }
+            if (tab === "programs") {
+                content.innerText =
+                    "🎓 Bachelor’s: Computer Science, Software Engineering | Master’s: IT Business Management. Hands-on learning with industry partnerships, research labs, and expert faculty.";
+                document.getElementById("tab-programs").classList.add("bg-blue-500", "text-white");
+            }
+            if (tab === "contact") {
+                content.innerText =
+                    "☎️ National Road 6A, Prek Leap, Phnom Penh | (+855) 23 993 274 | info@cadt.edu.kh | Mon–Fri: 8AM–5PM, Sat: 8AM–12PM | www.cadt.edu.kh";
+                document.getElementById("tab-contact").classList.add("bg-blue-500", "text-white");
+            }
+        }
+        showTab("about");
+    </script>
+
+</body>
+</html>
